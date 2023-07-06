@@ -1,5 +1,5 @@
-# Youtube-Clone
-A clone of YouTube App using React
+# VidTube
+A website with similar UI as YouTube. Made using React and Styled Components.
 
 # Getting Started with Create React App
 
