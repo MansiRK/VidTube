@@ -49,6 +49,7 @@ margin-bottom: 25px;
 
 const Image = styled.img`
 height: 35px;
+margin-left: 15px;
 
 `
 
@@ -72,7 +73,7 @@ padding: 5px 15px;
 background-color: transparent;
 border: 1px solid blue;
 color: blue;
-border-radius: 3px;
+border-radius: 50px;
 font-size: 15px;
 font-weight: 500;
 margin-top: 10px;

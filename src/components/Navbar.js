@@ -27,19 +27,19 @@ left: 0px;
 right: 0px;
 margin: auto;
 display: flex;
-gap: 5px;
+padding: 2px 15px;
 cursor: pointer;
 align-items: center;
-
+justify-content: space-between;
+border: 1px solid #ccc;
+border-radius: 50px;
 
 `
 const Input = styled.input`
-width: 40%;
+border: none;
+width: 100%;
 height: 35px;
-padding-left: 10px;
 background-color: transparent;
-border: 1px solid ${({theme}) => theme.soft};
-border-radius: 50px;
 color: ${({theme}) => theme.text};
 font-size: 15px;
 `
@@ -49,7 +49,7 @@ padding: 5px 15px;
 background-color: transparent;
 border: 1px solid blue;
 color: blue;
-border-radius: 3px;
+border-radius: 50px;
 font-size: 15px;
 font-weight: 500;
 cursor: pointer;
