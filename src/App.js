@@ -1,7 +1,9 @@
-import styled from "styled-components"
+import React , {useState} from "react"
+import styled, { ThemeProvider } from "styled-components"
 import Menu from "./components/Menu"
 import Navbar from "./components/Navbar"
 import "./App.css"
+import { darkTheme, lightTheme } from "./utils/theme"
 
 const Container = styled.div`
   display: flex;
@@ -10,6 +12,7 @@ const Container = styled.div`
 
 const Main = styled.div`
   flex: 7;
+  background-color: ${({theme}) => theme.bg};
 `
 
 const Wrapper = styled.div`
@@ -18,9 +21,14 @@ const Wrapper = styled.div`
 
 
 function App() {
+
+  const [darkMode, setDarkMode] = useState(true)
+
+
   return (
-    <Container>
-      <Menu/>
+    <ThemeProvider theme={darkMode ? darkTheme : lightTheme}>
+<Container>
+      <Menu darkMode = {darkMode} setDarkMode = {setDarkMode} />
       <Main>
       <Navbar/>
       <Wrapper>
@@ -28,6 +36,9 @@ function App() {
       </Wrapper>
       </Main>
     </Container>
+
+    </ThemeProvider>
+    
   );
 }
 
