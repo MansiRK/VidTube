@@ -1,15 +1,33 @@
-import './App.css';
-import'bootstrap/dist/css/bootstrap.min.css'
-import Header from './components/header';
-import Sidebar from  './components/sidebar'
+import styled from "styled-components"
+import Menu from "./components/Menu"
+import Navbar from "./components/Navbar"
+import "./App.css"
+
+const Container = styled.div`
+  display: flex;
+
+`
+
+const Main = styled.div`
+  flex: 7;
+`
+
+const Wrapper = styled.div`
+
+`
+
 
 function App() {
   return (
-    <div className="main">
-      {/* YouTube */}
-      <Header/>
-      <Sidebar/>
-    </div>
+    <Container>
+      <Menu/>
+      <Main>
+      <Navbar/>
+      <Wrapper>
+        video cards
+      </Wrapper>
+      </Main>
+    </Container>
   );
 }
 
