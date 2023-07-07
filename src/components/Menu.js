@@ -1,6 +1,7 @@
 import React from "react"
 import styled from "styled-components"
 import AppLogo from "../image/logo.png"
+import {Link} from "react-router-dom"
 
 import ReorderOutlinedIcon from '@mui/icons-material/ReorderOutlined';
 import HomeIcon from '@mui/icons-material/Home'
@@ -83,18 +84,13 @@ display: flex;
 gap: 5px;
 `
 
-// const Title = styled.h3`
-// font-size: 15px;
-// font-weight: 500;
-// color: #aaaaaa;
-// margin-bottom: 20px;
-// `
-
 const Menu = ({darkMode, setDarkMode}) => {
     return (
         <Container>
 
             <Wrapper>
+                <Link to="/" style={{textDecoration: "none", color: "inherit"}}>
+                
                 <Logo>
                 <ReorderOutlinedIcon/>
                     <Image src={AppLogo} />
@@ -181,10 +177,12 @@ const Menu = ({darkMode, setDarkMode}) => {
                     <FeedbackOutlinedIcon/>
                     Send feedback
                 </Items>
+                </Link>
                 <Items onClick={() => setDarkMode(!darkMode)}>
                     <SettingsBrightnessOutlinedIcon/>
-                    Light theme
+                    {darkMode ? "Light": "Dark"} theme
                 </Items>
+                
             </Wrapper>
 
         </Container>
