@@ -11,13 +11,19 @@ const Container = styled.div`
 display: flex;
 gap: 25px;
 
+
 `
 const Content = styled.div`
 flex: 5;
+height: 100vh;
 
 `
 
 const VideoWrapper = styled.div`
+height: ${(props) => (props.type === "sm" ? "400px" : "720")};
+width: ${(props) => (props.type === "sm" ? "500px" : "100%")};
+
+
 
 
 `
@@ -44,13 +50,16 @@ const Info = styled.span`
 color: ${({theme}) => theme.textSoft};
 
 `
-const Button = styled.div`
+const Button = styled.button`
+background-color: transparent;
+padding: 5px 15px;
+border: 1px solid #ccc;
+font-size: 15px;
+font-weight: 500;
 display: flex;
 align-item: center;
-padding: 5px;
 gap: 5px;
 cursor: pointer;
-border: 1px solid #ccc;
 color: ${({theme}) => theme.text};
 border-radius: 50px;
 `
@@ -62,11 +71,13 @@ color: ${({theme}) => theme.text};
 
 `
 const Subscribe = styled.button`
+margin-top: 10px;
   background-color: #cc1a00;
+font-size: 16px;
   font-weight: 500;
   color: white;
   border: none;
-  border-radius: 3px;
+  border-radius: 50px;
   height: max-content;
   padding: 10px 20px;
   cursor: pointer;
@@ -74,7 +85,8 @@ const Subscribe = styled.button`
 
 const Recommendations = styled.div`
 flex: 2;
-overflow: hidden;
+overflow: scroll;
+height: 100vh;
 
 `
 

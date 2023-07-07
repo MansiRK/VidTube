@@ -6,20 +6,24 @@ import Channel_Logo from "../image/channel_logo.jpeg"
 
 
 const Container = styled.div`
-width: 360px;
-margin-bottom: 40px;
+width: ${(props) => props.type !== "sm" && "360px"};
+  margin-bottom: ${(props) => (props.type === "sm" ? "10px" : "45px")};
 cursor: pointer;
 background-color: ${({theme}) => theme.bgLight};
+display: ${(props) => props.type === "sm" && "flex"};
+gap: 10px;
+overflow: scroll;
 `
 const Image = styled.img`
 width: 100%;
-height: 202px;
+height: ${(props) => (props.type === "sm" ? "120px" : "202px")};
 background-color: #999;
 `
 
 const Details = styled.div`
 display: flex;
-margin-top: 15px;
+flex: 1;
+margin-top: ${(props) => props.type !== "sm" && "15px"};
 gap: 10px;
 `
 
@@ -28,6 +32,7 @@ gap: 10px;
 width: 35px;
 height: 35px;
 border-radius: 50%;
+display: ${(props) => props.type === "sm" && "none"};
 `
 const Text = styled.div`
 
@@ -56,13 +61,13 @@ color: ${({theme}) => theme.textSoft};
 `
 
 
-const VideoCard = () => {
+const VideoCard = (type={type}) => {
     return ( 
         <Link to="/video/test"  style={{textDecoration: "none"}}>
-        <Container>
-            <Image src={Thumbnail} />
-            <Details>
-                <ChannelLogo src={Channel_Logo}/>
+        <Container type={type}>
+            <Image type={type} src={Thumbnail} />
+            <Details type={type}>
+                <ChannelLogo type={type} src={Channel_Logo}/>
                 <Text>
                     <VideoTitle>HTML Tutorial For Beginners</VideoTitle>
                     <ChannelName>Code with Harry</ChannelName>
